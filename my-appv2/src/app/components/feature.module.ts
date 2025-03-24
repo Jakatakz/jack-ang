@@ -11,9 +11,6 @@ import { ReportComponent } from './report/report.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ParentComponent } from './parent/parent.component';
-import { Child1Component } from './child1/child1.component';
-import { Child2Component } from './child2/child2.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +22,6 @@ import { Child2Component } from './child2/child2.component';
     AccountingComponent,
     HomeComponent,
     AboutComponent,
-    ParentComponent,
-    Child1Component,
-    Child2Component
   ],
   imports: [
     CommonModule,

@@ -4,8 +4,8 @@ import { MyfeaturesComponent } from './components/myfeatures/myfeatures.componen
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ParentComponent } from './components/parent/parent.component';
-import { Child1Component } from './components/child1/child1.component';
-import { Child2Component } from './components/child2/child2.component';
+import { Child1Component } from './components/parent/child1/child1.component';
+import { Child2Component } from './components/parent/child2/child2.component';
 
 const routes: Routes = [
   
@@ -16,19 +16,14 @@ const routes: Routes = [
     path:'about', component: AboutComponent
   },
   {
-    path: 'parent', component:ParentComponent,
-    children: [
-      {
-        path: 'child1', component: Child1Component
-      },
-      {
-        path: 'child2', component: Child2Component
-      }
-    ]
+    path: 'parent',
+    loadChildren: () => import('./components/parent/parent.module').then(m => m.ParentModule)
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
-  }
+  },
+  
+  { path: 'parent', loadChildren: () => import('./components/parent/parent.module').then(m => m.ParentModule) }
 ];
 
 @NgModule({
