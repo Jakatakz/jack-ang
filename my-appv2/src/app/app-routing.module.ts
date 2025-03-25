@@ -20,10 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('./components/parent/parent.module').then(m => m.ParentModule)
   },
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: 'required-features',
+    loadChildren: () => import('./components/feature/feature.module').then(m => m.FeatureModule)
   },
-  
-  { path: 'parent', loadChildren: () => import('./components/parent/parent.module').then(m => m.ParentModule) }
+  {
+    path: '', redirectTo: '/home', pathMatch: 'full'
+  }
 ];
 
 @NgModule({
