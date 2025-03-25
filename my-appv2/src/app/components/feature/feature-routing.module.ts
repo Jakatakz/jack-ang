@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'onetimepayment', component: OnetimepaymentComponent },
       { path: 'setting', component: SettingComponent },
       { path: 'report', component: ReportComponent },
-      { path: 'accounting', component: AccountingComponent },
+      { path: 'accounting/:id', component: AccountingComponent },
       { path: '', redirectTo: 'invoice', pathMatch: 'full' },
       { path: 'other-module-to-lazy-load', loadChildren: () => import('./other-module-to-lazy-load/other-module-to-lazy-load-routing.module').then(m => m.OtherModuleToLazyLoadRoutingModule) }
     ]

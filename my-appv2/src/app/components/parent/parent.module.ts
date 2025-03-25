@@ -1,20 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { ParentComponent } from './parent.component';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
+import { ParentRoutingModule } from './parent-routing.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: ParentComponent,
-    children: [
-      { path: 'child1', component: Child1Component },
-      { path: 'child2', component: Child2Component }
-    ]
-  }
-];
+
 
 @NgModule({
   declarations: [
@@ -24,7 +16,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    ParentRoutingModule
   ]
 })
 export class ParentModule { }

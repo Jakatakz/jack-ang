@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-accounting',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AccountingComponent {
 
+  accountingId!: string;
+
+  constructor(private route: ActivatedRoute)
+  {
+  }
+  
+  ngOnInit()
+  {
+    this.route.paramMap.subscribe(params =>
+    {
+      this.accountingId = params.get('id')!;
+      console.log(this.accountingId + " <-- accountId");
+    })
+  }
 }
